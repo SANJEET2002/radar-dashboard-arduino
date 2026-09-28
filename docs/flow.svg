@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 340" role="img" aria-labelledby="flowTitle flowDesc">
+  <title id="flowTitle">Flow from the ultrasonic sensor to the radar page</title>
+  <desc id="flowDesc">The servo sweeps, the HC-SR04 measures distance, the ESP32 publishes angle and distance at /data, and the browser radar page reads that address over Wi-Fi. The buzzer sounds when an object stays within 20 cm.</desc>
+  <rect width="1080" height="340" rx="16" fill="#F4F7F6"/>
+  <defs>
+    <marker id="arrowGreen" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1.4 L9 5 L0 8.6 Z" fill="#0E7A52"/>
+    </marker>
+    <marker id="arrowOrange" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 1.4 L9 5 L0 8.6 Z" fill="#E07A3D"/>
+    </marker>
+  </defs>
+
+  <!-- Servo -->
+  <rect x="28" y="118" width="188" height="112" rx="14" fill="#FFFFFF" stroke="#1B3A42" stroke-width="1.5"/>
+  <circle cx="52" cy="146" r="12" fill="#0E7A52"/>
+  <text x="52" y="150" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">1</text>
+  <text x="72" y="151" fill="#102028" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Servo</text>
+  <text x="44" y="178" fill="#52666C" font-family="Arial, Helvetica, sans-serif" font-size="13">Steps 1 deg every 20 ms</text>
+  <text x="44" y="200" fill="#52666C" font-family="Arial, Helvetica, sans-serif" font-size="13">Sweeps 0 to 180 deg</text>
+
+  <!-- Sensor -->
+  <rect x="292" y="118" width="200" height="112" rx="14" fill="#FFFFFF" stroke="#1B3A42" stroke-width="1.5"/>
+  <circle cx="316" cy="146" r="12" fill="#0E7A52"/>
+  <text x="316" y="150" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">2</text>
+  <text x="336" y="151" fill="#102028" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">HC-SR04</text>
+  <text x="308" y="178" fill="#52666C" font-family="Arial, Helvetica, sans-serif" font-size="13">Measures distance</text>
+  <text x="308" y="200" fill="#52666C" font-family="Arial, Helvetica, sans-serif" font-size="13">in centimetres</text>
+
+  <!-- Buzzer branch -->
+  <rect x="560" y="28" width="230" height="84" rx="14" fill="#FFF6F0" stroke="#E07A3D" stroke-width="1.5"/>
+  <text x="580" y="60" fill="#C4551A" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Buzzer</text>
+  <text x="580" y="84" fill="#8A4B32" font-family="Arial, Helvetica, sans-serif" font-size="13">Beeps while within 20 cm</text>
+
+  <!-- Web server -->
+  <rect x="560" y="140" width="230" height="112" rx="14" fill="#F3FBF7" stroke="#0E7A52" stroke-width="1.5"/>
+  <circle cx="584" cy="168" r="12" fill="#0E7A52"/>
+  <text x="584" y="172" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">3</text>
+  <text x="604" y="173" fill="#102028" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">ESP32 /data</text>
+  <text x="576" y="200" fill="#52666C" font-family="Arial, Helvetica, sans-serif" font-size="13">Sends angle, distance</text>
+  <text x="576" y="222" fill="#52666C" font-family="Arial, Helvetica, sans-serif" font-size="13">example: 90,23.4</text>
+
+  <!-- Browser -->
+  <rect x="860" y="140" width="192" height="112" rx="14" fill="#F3F8FD" stroke="#1565C0" stroke-width="1.5"/>
+  <circle cx="884" cy="168" r="12" fill="#1565C0"/>
+  <text x="884" y="172" text-anchor="middle" fill="#FFFFFF" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">4</text>
+  <text x="904" y="173" fill="#102028" font-family="Arial, Helvetica, sans-serif" font-size="16" font-weight="700">Radar page</text>
+  <text x="876" y="200" fill="#52666C" font-family="Arial, Helvetica, sans-serif" font-size="13">Live Server</text>
+  <text x="876" y="222" fill="#52666C" font-family="Arial, Helvetica, sans-serif" font-size="13">polls /data every 100 ms</text>
+
+  <!-- Arrows -->
+  <path d="M216 174 H292" fill="none" stroke="#0E7A52" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <path d="M492 186 H530 V196 H560" fill="none" stroke="#0E7A52" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <path d="M492 150 H524 V70 H560" fill="none" stroke="#E07A3D" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+  <path d="M790 196 H860" fill="none" stroke="#0E7A52" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+
+  <text x="248" y="162" text-anchor="middle" fill="#0E7A52" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">sweep</text>
+  <text x="496" y="116" fill="#C4551A" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">if within 20 cm</text>
+  <text x="825" y="184" text-anchor="middle" fill="#0E7A52" font-family="Arial, Helvetica, sans-serif" font-size="12" font-weight="700">Wi-Fi</text>
+
+  <text x="540" y="308" text-anchor="middle" fill="#52666C" font-family="Arial, Helvetica, sans-serif" font-size="13">Steps 1 to 3 repeat while the ESP32 is powered. Step 4 runs in the browser on the same Wi-Fi.</text>
+</svg>
