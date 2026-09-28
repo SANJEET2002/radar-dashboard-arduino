@@ -7,8 +7,8 @@
 #define SERVO_PIN 13
 #define BUZZER_PIN 33
 // Wi-Fi
-const char* ssid = "VSMART ACADEMY-uedkn";
-const char* password = "VSMART@9056";
+const char* ssid = "YOUR WIFI SSID";
+const char* password = "YOUR WIFI PASSWORD";
 
 WebServer server(80);
 
