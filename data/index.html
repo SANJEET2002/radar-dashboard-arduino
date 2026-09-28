@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ESP32 Smart Radar</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="radar-container">
+
+        <header>
+            <div>
+                <h1>ESP32 SMART RADAR</h1>
+                <p>REAL-TIME OBJECT DETECTION</p>
+            </div>
+
+            <div class="connection-status">
+                <span class="status-dot"></span>
+                ONLINE
+            </div>
+        </header>
+
+
+        <main>
+
+            <!-- Radar -->
+            <section class="radar-section">
+
+                <div class="radar-wrapper">
+
+                    <canvas id="radarCanvas"></canvas>
+
+                </div>
+
+            </section>
+
+
+            <!-- Information Panel -->
+            <section class="info-panel">
+
+                <div class="info-card">
+                    <span class="label">ANGLE</span>
+                    <span class="value" id="angleValue">90°</span>
+                </div>
+
+                <div class="info-card">
+                    <span class="label">DISTANCE</span>
+                    <span class="value" id="distanceValue">-- cm</span>
+                </div>
+
+                <div class="info-card status-card">
+                    <span class="label">STATUS</span>
+                    <span class="value" id="radarStatus">
+                        SCANNING
+                    </span>
+                </div>
+
+            </section>
+
+        </main>
+
+
+        <footer>
+            <span>ESP32</span>
+            <span>•</span>
+            <span>ULTRASONIC SENSOR</span>
+            <span>•</span>
+            <span>LIVE RADAR</span>
+        </footer>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

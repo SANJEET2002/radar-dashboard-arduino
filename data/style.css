@@ -1,0 +1,247 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    min-height: 100vh;
+   background: #EEF3F3;
+    color: #17212B;
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    overflow-x: hidden;
+}
+
+.radar-container {
+    width: 100%;
+    max-width: 1100px;
+    min-height: 100vh;
+    padding: 24px 25px 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* HEADER */
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(0, 255, 102, 0.15);
+}
+
+header h1 {
+    font-size: 26px;
+    letter-spacing: 2px;
+    color: #00FF66;
+}
+
+header p {
+    margin-top: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    /* color: #78909C; */
+    color: #55656d;
+}
+
+.connection-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: #165730;
+    white-space: nowrap;
+    margin-left: 20px;
+    font-weight: 600;
+}
+
+.status-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #00FF66;
+    box-shadow: 0 0 12px #00FF66;
+}
+
+/* MAIN */
+
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-top: 10px;
+}
+
+/* RADAR */
+
+.radar-section {
+    width: 100%;
+    height: min(54vh, 540px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: #0B171B;
+    border-radius: 24px;
+
+    box-shadow:
+        0 14px 40px rgba(20, 60, 65, 0.18),
+        inset 0 0 0 1px rgba(0, 180, 160, 0.18);
+
+    overflow: hidden;
+}
+
+.radar-wrapper {
+    width: min(72vw, 620px);
+    height: min(54vh, 540px);
+    position: relative;
+}
+
+#radarCanvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* INFO PANEL */
+
+.info-panel {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+}
+
+.info-card {
+    padding: 16px;
+    min-height: 90px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(0, 255, 102, 0.14);
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 7px;
+}
+
+.label {
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 400;
+    color: #55656d;
+    /* color: #78909C; */
+}
+
+.value {
+    font-size: 24px;
+    font-weight: bold;
+    color: #00FF66;
+}
+
+.status-card .value {
+    color: #26A69A;
+}
+
+/* FOOTER */
+
+footer {
+    margin-top: 14px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(0, 255, 102, 0.1);
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+     color: #55656d;
+    /* color: #607D8B; */
+    
+}
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .radar-container {
+        padding: 16px 14px 12px;
+    }
+
+    header {
+        padding-bottom: 13px;
+    }
+
+    header h1 {
+        font-size: 19px;
+        letter-spacing: 1.5px;
+    }
+
+    header p {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .connection-status {
+        font-size: 9px;
+        margin-left: 10px;
+    }
+
+    .status-dot {
+        width: 8px;
+        height: 8px;
+    }
+
+    main {
+        padding-top: 5px;
+        gap: 8px;
+    }
+
+    .radar-section {
+    flex: none;
+    height: 50vh;
+    min-height: 350px;
+    border-radius: 20px;
+}
+
+    .radar-wrapper {
+        width: 96vw;
+        height: 50vh;
+        min-height: 350px;
+    }
+
+    .info-panel {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+
+    .info-card {
+        padding: 11px 8px;
+        min-height: 82px;
+        border-radius: 10px;
+    }
+
+    .label {
+        font-size: 8px;
+        letter-spacing: 1.5px;
+    }
+
+    .value {
+        font-size: 17px;
+    }
+
+    .status-card .value {
+        font-size: 13px;
+        white-space: nowrap;
+    }
+
+    footer {
+        margin-top: 10px;
+        padding-top: 9px;
+        font-size: 7px;
+    }
+}
